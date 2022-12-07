@@ -1,2 +1,2 @@
-runtime: python3.7.9
+runtime: python379
 entrypoint: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main1:app
