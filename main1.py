@@ -7,6 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Union
 
+class Item2(BaseModel):
+    text: str
 
 class Item(BaseModel):
     name: str
@@ -26,7 +28,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 def hello():
     return {"message":"Hello TutLinks.com"}
 
+@app.post("/h5/")
+def hello3(item:Item2):
+    return {"message":" TutLinks.com"}
